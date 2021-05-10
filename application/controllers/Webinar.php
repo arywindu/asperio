@@ -9,6 +9,7 @@ class Webinar extends CI_Controller {
 		$this->load->model('WebinarModel', 'model');
           $this->load->helper('config_upload_image');
 		$this->load->library('upload');
+		$this->load->helper('config_pagination');
 
 	}
      function index(){
@@ -24,6 +25,40 @@ class Webinar extends CI_Controller {
           $this->load->view('admin/p_webinar');
           $this->load->view('admin/footer');
      }
+
+     function view(){
+          $this->load->library('pagination');
+		$config['base_url'] = base_url().'webinar/view';
+		$config['total_rows'] = count($this->model->getAll());
+		$config['per_page'] = 3;
+		
+		// Bootstrap 4 Pagination fix
+		$config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination">';
+		$config['full_tag_close']   = '</ul></nav></div>';
+		$config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+		$config['num_tag_close']    = '</span></li>';
+		$config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+		$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+		$config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['next_tag_close']  	= '<span aria-hidden="true"></span></span></li>';
+		$config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['prev_tag_close']  	= '</span></li>';
+		$config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+		$config['first_tag_close'] 	= '</span></li>';
+		$config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['last_tag_close']  	= '</span></li>';
+          
+		$this->pagination->initialize($config);
+          $from = $this->uri->segment(3);
+          $data = array(
+               'title_web' => 'Daftar webinar - Asperio.id',
+               'datawebinar'	=> $this->model->getLimit($config['per_page'], $from),
+          );
+          $this->load->view('default/header', $data);
+          $this->load->view('default/page_webinar');
+          $this->load->view('default/footer');
+     }
+
      function add(){
           if(empty($this->session->userdata('id'))){
                $this->session->set_flashdata('error_msg', 'Anda harus login terlebih dahulu');
@@ -60,12 +95,6 @@ class Webinar extends CI_Controller {
 	    }
 	    else
 	    {
-          /* title_webinar
-          lead_webinar
-          webinar
-          keywords
-          category
-          status_webinar */
 			$data = array(
 				'title'			=> $this->input->post('title_webinar'),
 				'slug'			=> url_title($this->input->post('title_webinar'), 'dash', TRUE),
