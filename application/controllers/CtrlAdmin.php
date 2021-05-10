@@ -110,19 +110,6 @@ class ctrladmin extends CI_Controller {
 		$this->load->view('admin/p_administrator');
 		$this->load->view('admin/footer');
 	}	
-	public function slider_image()
-	{
-		if(empty($this->session->userdata('id'))){
-			$this->session->set_flashdata('error_msg', 'Anda harus login terlebih dahulu');
-			redirect('ctrladmin');
-		}
-		$data = array(
-			'title_web' => 'Daftar Image Slider - Asperio.id',
-		);
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/p_slider_image');
-		$this->load->view('admin/footer');
-	}	
 	
 	public function contraception()
 	{
@@ -176,23 +163,4 @@ class ctrladmin extends CI_Controller {
 	/* 
 	Function for handling article begin
 	*/
-	public function comment()
-	{
-		if(empty($this->session->userdata('id'))){
-			$this->session->set_flashdata('error_msg', 'Anda harus login terlebih dahulu');
-			redirect('ctrladmin');
-		}
-		$data = array(
-			'title_web' => 'Daftar Komentar - Asperio.id',
-			'comment'   => $this->Asperio_Model->get_comment(),
-			'list_comment' => $this->Asperio_Model->get_comment(),	
-		);
-
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/p_comment');
-		$this->load->view('admin/footer');
-	}	
-
-
-
 }

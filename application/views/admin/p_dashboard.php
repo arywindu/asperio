@@ -56,37 +56,6 @@
                     </div>
                     <!-- Column -->
                     <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Total pengunjung</h4>
-                                <div class="text-center">
-                                <?php 
-                                if(empty($visitor))
-                                {
-
-                                ?>
-                                    <h2 class="font-light m-b-0"><i class="fa fa-grav m-r-10 text-info"></i>0</h2>
-                                    <span class="text-muted">Pengunjung yang terdaftar</span>
-                                <?php 
-                                }
-                                else{
-                                ?>
-                                    <h2 class="font-light m-b-0"><i class="fa fa-grav m-r-10 text-info"></i><?php echo COUNT($visitor); ?></h2>
-                                    <span class="text-muted">Pengunjung yang terdaftar</span>                                
-                                <?php
-                                }
-                                ?>
-                                </div>
-                                <!--
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-	                            -->
-                            </div>
-                        </div>
-                    </div>
                     <!-- Column -->
                 </div>
                 <!-- Row -->
