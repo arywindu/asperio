@@ -8,7 +8,7 @@
 
 	 <div class="mt-5 text-center">					
 		<span style="text-decoration : none;" class="pagination justify-content-center">
-			<?php echo $this->pagination->create_links(); ?>
+			<?php $linkpage = $this->pagination->create_links(); echo $linkpage;?>
 		</span>
 	</div>
 
@@ -31,7 +31,7 @@
 
 	 <div class="mt-5 text-center">					
 		<span style="text-decoration : none;" class="pagination justify-content-center">
-			<?php echo $this->pagination->create_links(); ?>
+			<?php echo $linkpage ?>
 		</span>
 	</div>
 	 
