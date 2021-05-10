@@ -159,55 +159,6 @@ class Asperio_Model extends CI_Model
     }
 
     /* 
-    Section visitor begin
-    */
-
-    // Function to handle registration visitor    
-    public function add_visitor($data)
-    {
-        $insert = $this->db->insert('bb_visitor', $data);
-
-        if($insert)
-        {
-            return $this->db->insert_id();
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    // Function to handle login visitor
-    public function login_visitor($username, $password)
-    {
-        $this->db->select('*');
-        $this->db->from('bb_visitor');
-        $this->db->where('username', $username);
-        $this->db->where('password', $password);
-
-       if($query = $this->db->get())
-       {
-            return $query->result();
-       }
-       else
-       {
-            return false;
-       }
-    }
-    // Function to handle get visitor
-    public function get_visitor()
-    {
-        $query = $this->db->get('bb_visitor');
-        if($query)
-        {
-            return $query->result();        
-        }
-        else
-        {
-            return false;
-        }
-    }
-    /* 
     Section visitor end
     */ 
     public function get_all(){
@@ -219,37 +170,7 @@ class Asperio_Model extends CI_Model
         $this->db->like('article',$keyword);
         return $this->db->get()->result();
     }
-    public function add_article_comment($data)
-    {
-        $insert = $this->db->insert('bb_comment_article', $data);
-
-        if($insert)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public function get_comment($id_article)
-    {   
-        // $this->db->select('*');
-        // $this->db->from('bb_vw_comment');
-     
-        $query = $this->db->get_where('bb_vw_comment', array('id_article' => $id_article));
-
-        if($query)
-        {
-            return $query->result();
-        }
-        else
-        {
-            return false;
-        }
-
         // return $this->db->get()->result();
-    }
     
 }
 ?>
