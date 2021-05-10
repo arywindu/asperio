@@ -3,7 +3,7 @@ class CtrlAdmin_Article extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();		
-		$this->load->model('BeraniBerencana_Model');
+		$this->load->model('Asperio_Model');
 		$this->load->helper('config_upload_image');
 		$this->load->library('upload');
 	}
@@ -53,7 +53,7 @@ class CtrlAdmin_Article extends CI_Controller {
 			}
 			else
 			{
-				$insertToDb = $this->BeraniBerencana_Model->add_article($data);
+				$insertToDb = $this->Asperio_Model->add_article($data);
 				
 				if($insertToDb){
 		        	$this->session->set_flashdata('success_msg', 'Artikel anda berhasil disimpan.');
@@ -69,7 +69,7 @@ class CtrlAdmin_Article extends CI_Controller {
 	// Function to delete article from database
 	public function delete_article($id)
 	{
-		$delete_article = $this->BeraniBerencana_Model->delete_article($id);
+		$delete_article = $this->Asperio_Model->delete_article($id);
 
 		if($delete_article)
 		{
@@ -96,7 +96,7 @@ class CtrlAdmin_Article extends CI_Controller {
 		);
 		$data = $this->security->xss_clean($data);
 		
-		$update_article = $this->BeraniBerencana_Model->update_article($id, $data);
+		$update_article = $this->Asperio_Model->update_article($id, $data);
 
 		if($update_article)
 		{
@@ -122,7 +122,7 @@ class CtrlAdmin_Article extends CI_Controller {
 			redirect('ctrlAdmin/edit_article/'.$id);							
         }
         else {
-        	$this->BeraniBerencana_Model->update_image_article($id);
+        	$this->Asperio_Model->update_image_article($id);
         	$this->session->set_flashdata('success_msg', 'Berhasil merubah foto artikel.');		
 			redirect('ctrlAdmin/edit_article/'.$id);
         }	
