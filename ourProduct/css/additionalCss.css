@@ -1,0 +1,620 @@
+/* (1920x1080) Full HD Display */
+@media  screen and (max-width: 1920px) {
+  /* insert styles here */
+  @keyframes my-animation {        
+    from {
+      opacity : 0;
+      left : -300px;
+    }
+    to {
+      opacity : 1;
+      left : 0;
+    }      
+  }
+
+  .ml-desktop{
+    margin-left: 5%;
+  }
+
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  
+  }
+  
+  .carousel-indicators .active{
+    background-color: #f00;
+  }
+  
+  .carousel-indicators {
+    bottom: -150px;
+  }
+  
+  .run-animation {
+    position: relative;
+    animation: my-animation 2s ease;
+  }
+  
+  @keyframes my-animation2 {        
+    from {
+      opacity : 0;
+      left : 700px;
+    }
+    to {
+      opacity : 1;
+      left : 0;
+    }      
+  }
+  
+  .run-animation2 {
+    position: relative;
+    animation: my-animation2 2s ease;
+  }
+  
+  @keyframes my-opacity {        
+    from {
+      opacity : 0;      
+    }
+    to {
+      opacity : 1;
+    }      
+  }
+
+  .run-opacity {
+    position: relative;
+    animation: my-opacity 2s ease;
+  }
+
+html, body {
+max-width: 100%;
+scroll-behavior: smooth;
+/* overflow-x: hidden; */
+}
+
+.image-home {
+width : 404.5px;
+}
+
+.img-desktop {
+margin-left: 79%;
+}
+
+.btn-round-lg{
+border-radius: 22.5px;
+}
+.btn-round{
+border-radius: 17px;
+}
+.btn-round-sm{
+border-radius: 15px;
+}
+.btn-round-xs{
+border-radius: 11px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.circleText {
+    
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    padding: 8px;
+
+    background: #e5e5e5;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}    
+
+.bg-round-white {
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    padding-left: 10px;
+  
+  }
+
+  .bg-round-white2 {
+    border-radius: 35px;
+    background: white;
+    padding: 10px;
+    padding-left: 10px;
+  
+  }
+
+  .bg-cover {
+    background-image: url("../src/p2.png"); 
+    background-size: auto;
+}
+
+.bg-carousel {
+    background-color: #fff;
+}
+
+.txt-area {
+    width: 74%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color:#F7EAC9;
+    resize: none;
+  }
+
+.txt-form{
+    background: #F7EAC9;
+    height: 40px;
+}
+
+.frm-ctu{
+    background: #D2D2D2;
+    border-radius: 25px;
+    padding: 20px;    
+}
+
+.img-hand{
+    position: absolute;
+    width: 800px;
+    height: 583px;      
+}
+
+.index-image{
+    width: 550px;
+    margin-left: 10%;
+}
+.font-title{
+    font-size: 3.5rem;
+}
+
+.img-label-wrapper {
+  display: flex;
+}
+
+.titleResource {
+    margin-left: auto;
+    
+}
+
+.container:hover .overlay {
+    opacity: 1;
+  }
+
+  .dobot-text{
+    margin-left: 125px;
+  }
+
+  .simulator-break{
+    margin-top: 250px;
+  }
+
+  .zoom {
+    padding: 50px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+
+.ml-desktop{
+  margin-left: 5%;
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+
+}
+
+.carousel-indicators .active{
+  background-color: #f00;
+}
+
+.carousel-indicators {
+  bottom: -150px;
+}
+
+.simulator-break{
+  margin-top: 130px;
+}
+
+.simulator-sim{
+  margin-top: 130px;
+}
+
+@keyframes my-animation {        
+        from {
+          opacity : 0;
+          left : -300px;
+        }
+        to {
+          opacity : 1;
+          left : 0;
+        }      
+      }
+      
+      .run-animation {
+        position: relative;
+        animation: my-animation 2s ease;
+      }
+      
+      @keyframes my-animation2 {        
+        from {
+          opacity : 0;
+          left : 700px;
+        }
+        to {
+          opacity : 1;
+          left : 0;
+        }      
+      }
+      
+      .run-animation2 {
+        position: relative;
+        animation: my-animation2 2s ease;
+      }
+      
+      @keyframes my-opacity {        
+        from {
+          opacity : 0;      
+        }
+        to {
+          opacity : 1;
+        }      
+      }
+    
+      .run-opacity {
+        position: relative;
+        animation: my-opacity 2s ease;
+      }
+
+html, body {
+    max-width: 100%;
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+}
+
+.image-home {
+    width : 404.5px;
+}
+
+.img-desktop {
+  margin-left: 70%;
+}
+
+.btn-round-lg{
+    border-radius: 22.5px;
+    }
+    .btn-round{
+    border-radius: 17px;
+    }
+    .btn-round-sm{
+    border-radius: 15px;
+    }
+    .btn-round-xs{
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    .circleText {
+        
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        padding: 8px;
+    
+        background: #e5e5e5;
+        border: 2px solid #666;
+        color: #666;
+        text-align: center;
+    
+        font: 32px Arial, sans-serif;
+    }    
+
+    .bg-round-white {
+        border-radius: 35px;
+        background: rgba(237, 242, 244, 0.5);
+        padding: 10px;
+        padding-left: 10px;
+      }
+
+      .bg-round-white2 {
+        border-radius: 35px;
+        background: white;
+        padding: 10px;
+        padding-left: 10px;
+      
+      }
+
+      .bg-cover {
+        background-image: url("../src/p2.png"); 
+        background-size: auto;
+    }
+
+    .bg-carousel {
+        background-color: #fff;
+    }
+
+    .txt-area {
+        width: 74%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color:#F7EAC9;
+        resize: none;
+      }
+
+    .txt-form{
+        background: #F7EAC9;
+        height: 40px;
+    }
+
+    .frm-ctu{
+        background: #D2D2D2;
+        border-radius: 25px;
+        padding: 20px;    
+    }
+
+    .img-hand{
+        position: absolute;
+        width: 800px;
+        height: 583px;      
+    }
+
+    .index-image{
+        width: 550px;
+        margin-left: 10%;
+    }
+    .font-title{
+        font-size: 3.5rem;
+    }
+
+    .img-label-wrapper {
+      display: flex;
+    }
+    
+    .titleResource {
+        margin-left: auto;
+        
+    }
+
+    .container:hover .overlay {
+        opacity: 1;
+      }
+
+      .dobot-text{
+        margin-left: 125px;
+      }
+
+      .zoom {
+        padding: 50px;
+        transition: transform .2s; /* Animation */
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+
+      .zoom:hover {
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+
+      .carousel2{
+        margin-top: 50px;
+      }
+      .carousel-inner2{
+        height: 100px;
+      }
+      .carousel-caption{
+        color: #fff;
+        top: 50%;
+      }
+
+      .mobile-btn-font2{
+        font-size: 12px;
+        font-weight: bolder;
+        text-align: center;
+      }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    @keyframes my-animation {        
+        from {
+          opacity : 0;
+          left : -300px;
+        }
+        to {
+          opacity : 1;
+          left : 0;
+        }      
+      }
+      
+      .run-animation {
+        position: relative;
+        animation: my-animation 2s ease;
+      }
+      
+      @keyframes my-animation2 {        
+        from {
+          opacity : 0;
+          left : 700px;
+        }
+        to {
+          opacity : 1;
+          left : 0;
+        }      
+      }
+      
+      .run-animation2 {
+        position: relative;
+        animation: my-animation2 2s ease;
+      }
+      
+      @keyframes my-opacity {        
+        from {
+          opacity : 0;      
+        }
+        to {
+          opacity : 1;
+        }      
+      }
+    
+      .run-opacity {
+        position: relative;
+        animation: my-opacity 2s ease;
+      }    
+
+ html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
+
+p {
+    font-size: 12px;
+}
+
+.font-title{
+    font-size: 1.5rem;
+}
+    
+ .image-home {
+     display: none;
+ }
+
+ .image-mobile-hidden{
+     display: none;
+ }
+ .frm-ctu{
+    background: #D2D2D2;
+    border-radius: 25px;
+    padding: 20px;    
+    margin: 10px;
+}
+.circleText {
+        
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    padding: 8px;
+
+    background: #e5e5e5;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}    
+
+.bg-cover {
+    background-image: url("../src/p2.png"); 
+    background-size: auto;
+}
+
+.index-image{
+    width: 300px;
+   margin-left: 5%;
+}
+
+.index-title{
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.mobile-ml-5{
+    margin-left: 5%;
+}
+
+.mobile-btn-font{
+    font-size: 12px;
+}
+
+.mobile-btn-font2{
+  font-size: 7px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.mobile-image-op{
+    width: 80px;
+    text-align: center;
+}
+
+.txt-form{
+    background: #F7EAC9;
+    height: 40px;
+}
+
+.txt-area {
+    width: 74%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color:#F7EAC9;
+    resize: none;
+  }
+
+  .bg-round-white {
+    border-radius: 35px;
+    background: rgba(237, 242, 244, 0.5);
+    padding: 10px;
+    
+  }
+
+  .bg-round-white2 {
+    border-radius: 35px;
+    background: white;
+    padding: 10px;
+    padding-left: 10px;
+  
+  }
+
+  .dobot-text{
+    margin: 40px;
+  }
+
+  .simulator-break{
+    margin-top: 50px;
+  }
+
+  .simulator-sim{
+    margin-top: 10px;
+    margin-left: -150px;
+  }
+
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  
+  }
+  
+  .carousel-indicators .active{
+    background-color: #f00;
+  }
+  
+  .carousel-indicators {
+    bottom: -150px;
+  }
+
+  .ml-desktop{
+    margin-left: 0%;
+  }
+  
+
+}
