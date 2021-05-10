@@ -30,7 +30,7 @@ class ctrladmin extends CI_Controller {
 			'password' => $password
 		);
 
-		$data = $this->BeraniBerencana_Model->login_user($user_login['username'], $user_login['password']);
+		$data = $this->Asperio_Model->login_user($user_login['username'], $user_login['password']);
 
 		if($data){
 			$this->session->set_userdata('id', $data['id']);			
@@ -62,7 +62,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web'  => 'Dashboard admin - Beraniberencana.com',
+			'title_web'  => 'Dashboard admin - Asperio.id',
 			'article'	 => $this->Asperio_Model->get_article(),
 			'visitor' => $this->Asperio_Model->get_visitor()
 		);
@@ -77,7 +77,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' => 'Daftar artikel - Beraniberencana.com',
+			'title_web' => 'Daftar artikel - Asperio.id',
 			'article'	=> $this->Asperio_Model->get_article(),
 		);
 		$this->load->view('admin/header', $data);
@@ -91,7 +91,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' => 'Daftar Pengguna - Beraniberencana.com',
+			'title_web' => 'Daftar Pengguna - Asperio.id',
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_registrant');
@@ -104,7 +104,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' => 'Daftar Administrator - Beraniberencana.com',
+			'title_web' => 'Daftar Administrator - Asperio.id',
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_administrator');
@@ -117,7 +117,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' => 'Daftar Image Slider - Beraniberencana.com',
+			'title_web' => 'Daftar Image Slider - Asperio.id',
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_slider_image');
@@ -131,7 +131,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' => 'Daftar Kontrasepsi - Beraniberencana.com',
+			'title_web' => 'Daftar Kontrasepsi - Asperio.id',
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_contraception');
@@ -151,7 +151,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' 		=> 'Tambah artikel - Beraniberencana.com',
+			'title_web' 		=> 'Tambah artikel - Asperio.id',
 			'article_category'	=> $this->Asperio_Model->get_article_category()
 		);
 		$this->load->view('admin/header', $data);
@@ -165,7 +165,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' 		=> 'Edit artikel - Beraniberencana.com',
+			'title_web' 		=> 'Edit artikel - Asperio.com',
 			'article_category'	=> $this->Asperio_Model->get_article_category(),
 			'selected_article'	=> $this->Asperio_Model->get_article_from_id($id),
 		);
@@ -183,7 +183,7 @@ class ctrladmin extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' => 'Daftar Komentar - Beraniberencana.com',
+			'title_web' => 'Daftar Komentar - Asperio.id',
 			'comment'   => $this->Asperio_Model->get_comment(),
 			'list_comment' => $this->Asperio_Model->get_comment(),	
 		);
