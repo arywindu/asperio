@@ -83,6 +83,20 @@ class ctrladmin extends CI_Controller {
 		$this->load->view('admin/p_article');
 		$this->load->view('admin/footer');
 	}	
+	public function webinar()
+	{
+		if(empty($this->session->userdata('id'))){
+			$this->session->set_flashdata('error_msg', 'Anda harus login terlebih dahulu');
+			redirect('ctrladmin');
+		}
+		$data = array(
+			'title_web' => 'Daftar webinar - Asperio.id',
+			'article'	=> $this->Asperio_Model->get_article(),
+		);
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/p_webinar');
+		$this->load->view('admin/footer');
+	}
 	public function registrant()
 	{
 		if(empty($this->session->userdata('id'))){
@@ -162,4 +176,33 @@ class ctrladmin extends CI_Controller {
 	/* 
 	Function for handling article begin
 	*/
+	public function add_webinar()
+	{
+		if(empty($this->session->userdata('id'))){
+			$this->session->set_flashdata('error_msg', 'Anda harus login terlebih dahulu');
+			redirect('ctrladmin');
+		}
+		$data = array(
+			'title_web' 		=> 'Tambah webinar - Asperio.id',
+			'article_category'	=> $this->Asperio_Model->get_article_category()
+		);
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/p_add_webinare');
+		$this->load->view('admin/footer');
+	}
+	public function edit_webinar($id)
+	{
+		if(empty($this->session->userdata('id'))){
+			$this->session->set_flashdata('error_msg', 'Anda harus login terlebih dahulu');
+			redirect('ctrladmin');
+		}
+		$data = array(
+			'title_web' 		=> 'Edit artikelwebinar - Asperio.com',
+			'article_category'	=> $this->Asperio_Model->get_article_category(),
+			'selected_article'	=> $this->Asperio_Model->get_article_from_id($id),
+		);
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/p_edit_webinar');
+		$this->load->view('admin/footer');
+	}
 }

@@ -113,7 +113,7 @@
                             <a href="<?php echo site_url('ctrladmin/administrator'); ?>" class="waves-effect"><i class="fa fa-mortar-board m-r-10" aria-hidden="true"></i>Data Admin</a> -->
                         </li>
                         <li> 
-                            <a href="<?php echo site_url('ctrladmin/slider_image'); ?>" class="waves-effect"><i class="fa fa-image m-r-10" aria-hidden="true"></i>Webinar</a>
+                            <a href="<?php echo site_url('ctrladmin/webinar'); ?>" class="waves-effect"><i class="fa fa-image m-r-10" aria-hidden="true"></i>Webinar</a>
                         </li>
                         <li> <!-- 
                             <a href="<?php echo site_url('ctrladmin/contraception'); ?>" class="waves-effect"><i class="fa fa-modx m-r-10" aria-hidden="true"></i>Alat Kontrasepsi</a> -->

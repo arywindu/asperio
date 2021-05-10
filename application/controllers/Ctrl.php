@@ -7,6 +7,7 @@ class Ctrl extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Asperio_Model');
+		$this->load->model('ArtikelModel');
 		$this->load->helper('config_pagination');
 	}
 	public function index()
@@ -90,7 +91,8 @@ class Ctrl extends CI_Controller {
 	{
 		$data = array
 		(
-			'title_web' => 'Asperio - Artikel'
+			'title_web' => 'Asperio - Artikel',
+			'dataartikel' => $this->ArtikelModel->getArtikel()
 		);
 		$this->load->view('default/header', $data);
 		$this->load->view('default/page_artikel');

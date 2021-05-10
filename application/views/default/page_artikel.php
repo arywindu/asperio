@@ -5,19 +5,20 @@
 	 <div class="container">
 		 <h4 class="display-4 text-center font-weight-bold">Artikel</h4>
 	 </div>
-
+	<?php
+	foreach ($dataartikel as $key) {?>
 	 <div class="container-fluid row p-5">
 		 <div class="col">
-		   <img width="90%" src="<?php echo base_url(); ?>res/src/artikel.jpg">
+		   <img width="90%" src="<?php echo base_url()?>/upload/img_article/<?php echo $key->img?>">
 		 </div>
 		 <div class="col">
-		   <h2 class="px-4 mb-4">Istilah “Robot” dan sejarahnya</h2>
-		   <p class="text-justify px-4">Apa kira-kira reaksi pertama kalian saat kalian mengetahui bahwa konsep robotika sudah ada dari zaman Yunani? Betul, robotika merupakan konsep kuno yang sudah ada dari beberapa abad yang lalu. Cerita legenda kuno Yunani menyebutkan bahwa Cadmus, penemu dan raja pertama negeri Thebes...</p>
-
+		   <h2 class="px-4 mb-4"><?php echo $key->title; ?></h2>
+		   <p class="text-justify px-4"><?php echo $key->lead_article?></p>
 			 <button type="button" onclick="window.location.href='landing_page.html'" style="margin-left: 75%" class="mt-4 btn btn-outline-secondary btn-round bg-danger text-white">
 			   Learn More
 			 </button>                  
 		 </div>
 	 </div>
+	 <?php } ?>
    </div>  
    <!-- END Artikel -->
