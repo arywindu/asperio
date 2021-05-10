@@ -22,7 +22,7 @@
 		 <div class="col">
 		   <h2 class="px-4 mb-4"><?php echo $key->title; ?></h2>
 		   <p class="text-justify px-4"><?php echo $key->lead_article?></p>
-			 <button type="button" onclick="window.location.href='landing_page.html'" style="margin-left: 75%" class="mt-4 btn btn-outline-secondary btn-round bg-danger text-white">
+			 <button type="button" onclick="window.location.href='<?php echo site_url('ctrl/article/'.$key->slug); ?>'" style="margin-left: 75%" class="mt-4 btn btn-outline-secondary btn-round bg-danger text-white">
 			   Learn More
 			 </button>                  
 		 </div>

@@ -8,6 +8,7 @@ class Ctrl extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Asperio_Model');
 		$this->load->model('ArtikelModel');
+		$this->load->model('WebinarModel');
 		$this->load->helper('config_pagination');
 	}
 	public function index()
@@ -54,7 +55,7 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/page_katalog');
 		$this->load->view('default/footer');
 	}
-	public function artikel($slug = NULL)
+	public function article($slug = NULL)
 	{
 		if(empty($slug))
 		{
@@ -75,18 +76,17 @@ class Ctrl extends CI_Controller {
 
 		$data = array
 		(
-			'title_web' => 'Berani Berencana - '.$detail_article[0]->title,
+			'title_web' => 'Asperio - '.$detail_article[0]->title,
 			'detail_article' => $detail_article,
 			'related_article' => $related_article,
 			'url_share' => $url_share,
 			'slug' => $detail_article[0]->slug,
-			'data_comment' => $this->Asperio_Model->get_comment($detail_article[0]->id)
-
 		);
 		$this->load->view('default/header', $data);
 		$this->load->view('default/p_detail_article');
 		$this->load->view('default/footer');
 	}
+
 	public function menuArtikel()
 	{
 		$this->load->library('pagination');
@@ -124,39 +124,4 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/page_artikel', $data);
 		$this->load->view('default/footer');
 	}
-	public function kontrasepsi_pilkb()
-	{
-		$data = array
-		(
-			'title_web' => 'Berani Berencana - pilkb'
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/p_detail_pilkb');
-		$this->load->view('default/footer');
-	}
-	public function kontrasepsi_kontra()
-	{
-		$data = array
-		(
-			'title_web' => 'Berani Berencana - kontrasepsi'
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/p_detail_kontra');
-		$this->load->view('default/footer');
-	}
-	
-
-	public function list_article()
-	{
-		$data = array(
-			'title_web' => 'Berani Berencana - Cari artikel',
-			'bb_article' => $this->Asperio_Model->get_all(),
-		);
-
-		$this->load->view('default/header', $data);		
-		$this->load->view('default/article');
-		$this->load->view('default/footer');
-		
-	}
- 
 }

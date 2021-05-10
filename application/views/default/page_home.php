@@ -118,18 +118,26 @@
 			  </div> 
 		  </div>
 
-		  
+	  
 		<!-- ifrmae  -->
 
-			<iframe id="myProduct" style="display: none;" class="col mt-4" frameBorder="0" src="" height="1250" width="auto" title="description"></iframe>
+			<iframe id="myProduct" style="display: none;" class="col" frameBorder="0" src="" sandbox="allow-same-origin"
+        	onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';"></iframe>
 			<script type="text/javascript">
 				function clickProduct(value) {
 					document.getElementById("myProduct").style.display = "block"
+					document.getElementById("btnKatalog").style.display = "block"
 					document.getElementById("myProduct").src = "<?php echo base_url(); ?>/ourProduct/"+value+".html";
 					}
 			</script>
 
-		<!-- here the our products -->             
+		<!-- here the our products -->   
+		
+		<div id="btnKatalog" style="display: none;" class="text-center mt-2">
+      		<button type="button" onclick="window.location.href='<?php echo site_url('ctrl/katalog'); ?>'" class="btn btn-outline-secondary btn-round bg-light font-weight-bold">
+       		 Learn More
+      		</button>
+    	  </div>
 		 
   </div>
 

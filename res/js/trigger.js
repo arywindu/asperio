@@ -46,9 +46,6 @@ function ourProduct(value){
   }
 }
 
-
-//button Our Prodct
-
 //animation
 // This changes everything
 "use strict";
