@@ -80,18 +80,18 @@ class Ctrl extends CI_Controller {
 			redirect('ctrl404');
 		}
 		else{
-			$related_webinar = $this->Asperio_Model->getwebinarbyslug($detail_webinar[0]->category_id, $slug);
+			$related_webinar = $this->Asperio_Model->get_related_webinar($detail_webinar[0]->category, $slug);
 		}		
 		
 		$url_share = $this->config->base_url().'ctrl/webinarDetail/'.$detail_webinar[0]->slug;
 
 		$data = array
 		(
-			'title_web' => 'Asperio - '.$detail_article[0]->title,
-			'detail_article' => $detail_article,
-			'related_article' => $related_article,
+			'title_web' => 'Asperio - '.$detail_webinar[0]->title,
+			'detail_webinar' => $detail_webinar,
+			'related_webinar' => $related_webinar,
 			'url_share' => $url_share,
-			'slug' => $detail_article[0]->slug,
+			'slug' => $detail_webinar[0]->slug,
 		);
 		$this->load->view('default/header', $data);
 		$this->load->view('default/p_detail_webinar');

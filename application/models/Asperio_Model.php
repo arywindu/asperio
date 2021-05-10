@@ -164,7 +164,7 @@ class Asperio_Model extends CI_Model
 
         $query = $this->db->get();
 
-        return $query->row();
+        return $query->result();
    }
 
     /* 
@@ -180,5 +180,17 @@ class Asperio_Model extends CI_Model
         return $this->db->get()->result();
     }
         // return $this->db->get()->result();
+
+    public function get_related_webinar($id_category, $slug)
+    {
+        $this->db->from('bb_webinar');
+        $this->db->order_by('created_date', 'RANDOM');
+        $this->db->where('category', $id_category);
+        $this->db->where_not_in('slug', $slug);
+        $this->db->limit('3');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
 }
 ?>
