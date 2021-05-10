@@ -38,16 +38,16 @@
 					<div class="col-sm-4 mt-5">
 						<div class="row col-md-12 ">
 							<div>
-								<a href="<?php echo site_url('ctrl/webinar/'.$ra->slug); ?>">
-								<img class="webinar_img_home" src="<?php echo base_url('upload/img_webinar/'.$ra->img); ?>" width="75%">
-								<p class="text-dark"><?php echo $ra->title; ?></p>
+								<a href="<?php echo site_url('ctrl/webinar/'.$rw->slug); ?>">
+								<img class="webinar_img_home" src="<?php echo base_url('upload/img_webinar/'.$rw->img); ?>" width="75%">
+								<p class="text-dark"><?php echo $rw->title; ?></p>
 								
 							</div>
 						</div>												
 						<div class="row mt-3">
 							<div class="col-md-12">
 								<button class="mt-4 btn btn-outline-secondary btn-round bg-danger text-white" class="mt-2">
-									<a href="<?php echo site_url('ctrl/webinar/'.$ra->slug); ?>">
+									<a href="<?php echo site_url('ctrl/webinar/'.$rw->slug); ?>">
 										<b class="text-white">READ MORE</b>
 									</a></button>
 							</div>

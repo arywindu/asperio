@@ -66,6 +66,38 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/footer');
 	}
 
+	public function webinarDetail($slug = NULL)
+	{
+		if(empty($slug))
+		{
+			redirect('ctrl404');
+		}
+		// Prepare detail article data
+		$detail_webinar = $this->Asperio_Model->getwebinarbyslug($slug);
+		
+		if($detail_webinar == false)
+		{
+			redirect('ctrl404');
+		}
+		else{
+			$related_webinar = $this->Asperio_Model->getwebinarbyslug($detail_webinar[0]->category_id, $slug);
+		}		
+		
+		$url_share = $this->config->base_url().'ctrl/webinarDetail/'.$detail_webinar[0]->slug;
+
+		$data = array
+		(
+			'title_web' => 'Asperio - '.$detail_article[0]->title,
+			'detail_article' => $detail_article,
+			'related_article' => $related_article,
+			'url_share' => $url_share,
+			'slug' => $detail_article[0]->slug,
+		);
+		$this->load->view('default/header', $data);
+		$this->load->view('default/p_detail_webinar');
+		$this->load->view('default/footer');
+	}
+
 	public function menuArtikel()
 	{
 		$this->load->library('pagination');

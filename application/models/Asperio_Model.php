@@ -157,6 +157,15 @@ class Asperio_Model extends CI_Model
         $this->db->where('id', $id);
         return $this->db->delete('bb_article');
     }
+    function getwebinarbyslug($slug)
+    {
+        $this->db->from('bb_webinar');
+        $this->db->where('slug', $slug);
+
+        $query = $this->db->get();
+
+        return $query->row();
+   }
 
     /* 
     Section visitor end
@@ -171,6 +180,5 @@ class Asperio_Model extends CI_Model
         return $this->db->get()->result();
     }
         // return $this->db->get()->result();
-    
 }
 ?>
