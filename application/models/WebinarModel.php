@@ -3,8 +3,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class WebinarModel extends CI_Model
 {
-     function getLimit(){
-          $this->db->from('bb_webinar');
+     function getLimit($number, $offset){
+          $this->db->from('bb_webinar', $number, $offset);
           return $this->db->get()->result();
      }
      function getAll(){

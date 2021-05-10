@@ -54,7 +54,7 @@
                           <a class="dropdown-item" href="<?php echo site_url('ctrl/menuArtikel'); ?>">Artikel</a>
                         </div>
                       </li>
-                      <a style="margin-right: 100px;" class="nav-item nav-link font-weight-bold" href="<?php echo site_url('ctrl/webinar'); ?>">Webinar</a>               
+                      <a style="margin-right: 100px;" class="nav-item nav-link font-weight-bold" href="<?php echo site_url('webinar/view'); ?>">Webinar</a>               
                   </div>
                 </div>
               </nav>
