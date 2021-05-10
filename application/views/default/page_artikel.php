@@ -8,7 +8,7 @@
 
 	 <div class="container-fluid row p-5">
 		 <div class="col">
-		   <img width="90%" src="src/artikel.jpg">
+		   <img width="90%" src="<?php echo base_url(); ?>res/src/artikel.jpg">
 		 </div>
 		 <div class="col">
 		   <h2 class="px-4 mb-4">Istilah “Robot” dan sejarahnya</h2>

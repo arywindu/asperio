@@ -64,7 +64,6 @@ class ctrladmin extends CI_Controller {
 		$data = array(
 			'title_web'  => 'Dashboard admin - Asperio.id',
 			'article'	 => $this->Asperio_Model->get_article(),
-			'visitor' => $this->Asperio_Model->get_visitor()
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_dashboard');
