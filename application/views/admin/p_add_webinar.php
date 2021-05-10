@@ -30,18 +30,18 @@
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <?php echo form_open_multipart('ctrladmin_article/add_article', ['class' => 'form-horizontal', 'method' => 'post']); ?>                
+                        <?php echo form_open_multipart('webinar/save', ['class' => 'form-horizontal', 'method' => 'post']); ?>                
                           <div class="form-group">
                             <label>Judul</label>
-                            <input type="text" name="title_article" class="form-control" id="title-article" placeholder="Masukkan judul webinar disini" required>
+                            <input type="text" name="title_webinar" class="form-control" id="title-webinar" placeholder="Masukkan judul webinar disini" required>
                           </div>
                           <div class="form-group">
                             <label>Lead Webinar</label>
-                            <textarea name="lead_article" class="form-control lead-article" id="lead-article"></textarea>
+                            <textarea name="lead_webinar" class="form-control lead-webinar" id="lead-webinar"></textarea>
                           </div>
                           <div class="form-group">
                             <label>Webinar</label>
-                            <textarea name="article" class="form-control" id="article" placeholder="" height="600"></textarea>
+                            <textarea name="webinar" class="form-control" id="webinar-area" placeholder="" height="600"></textarea>
                           </div>
                           <div class="form-group">
                             <label>Keywords</label>
@@ -50,10 +50,12 @@
                           <div class="form-group">
                             <label>Kategori</label>
                             <select class="form-control w-25" name="category" required>
+                            <option value="" selected>Pilih Kategori</option>
+
                         <?php 
-                        if($article_category != null)
+                        if($webinarkategori != null)
                         {
-                            foreach($article_category as $ac){
+                            foreach($webinarkategori as $ac){
                         ?>
                                 <option value="<?php echo $ac->id; ?>"><?php echo $ac->category_name; ?></option>
                         <?php 
@@ -68,7 +70,7 @@
                           </div>
                           <div class="form-group">
                             <label>Status Webinar</label>
-                            <select class="form-control w-25" name="status_article"required>
+                            <select class="form-control w-25" name="status_webinar"required>
                                 <option value="0">Draft</option>
                                 <option value="1">Publish</option>
                             </select>
@@ -86,7 +88,7 @@
             
             <script>
                 tinymce.init({
-                    selector: "#article",
+                    selector: "#webinar-area",
                     height:650,                
                     plugins: [
                         'wordcount'

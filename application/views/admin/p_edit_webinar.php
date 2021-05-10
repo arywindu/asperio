@@ -11,7 +11,7 @@
                         <h3 class="text-themecolor m-b-0 m-t-0">Webinar</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Edit Webinar "<?php echo $selected_article[0]->title; ?>"</li>
+                            <li class="breadcrumb-item active">Edit Webinar "<?php echo $selected_webinar[0]->title; ?>"</li>
                         </ol>
                     </div>                    
                 </div>
@@ -56,37 +56,38 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12">                       
                         
-                        <?php echo form_open_multipart('ctrladmin_article/update_article/'.$selected_article[0]->id, ['class' => 'form-horizontal', 'method' => 'post']); ?>                
+                        <?php echo form_open_multipart('webinar/update/'.$selected_webinar[0]->id, ['class' => 'form-horizontal', 'method' => 'post']); ?>                
                           <div class="form-group">
                             <label>Judul</label>
-                            <input type="text" name="title_article" class="form-control" id="title-article" placeholder="Masukkan judul webinar disini" required value="<?php echo $selected_article[0]->title; ?>">
+                            <input type="text" name="title_webinar" class="form-control" id="title_webinar" placeholder="Masukkan judul webinar disini" required value="<?php echo $selected_webinar[0]->title; ?>">
                           </div>
                           <div class="form-group">
                             <label>Lead webinar</label>
-                            <textarea name="lead_article" class="form-control lead-article" id="lead-article"><?php echo $selected_article[0]->lead_article; ?></textarea>
+                            <textarea name="lead_webinar" class="form-control lead_webinar" id="lead_webinar"><?php echo $selected_webinar[0]->lead_webinar; ?></textarea>
                           </div>
                           <div class="form-group">
                             <label>Webinar</label>
-                            <textarea name="article" class="form-control" id="article" placeholder="" height="600">
-                                <?php echo $selected_article[0]->article; ?>
+                            <textarea name="webinar" class="form-control" id="webinar-area" placeholder="" height="600">
+                                <?php echo $selected_webinar[0]->webinar; ?>
                             </textarea>
                           </div>
                           <div class="form-group">
                             <label>Keywords</label>
                             <textarea name="keywords" class="form-control" id="keywords">
-                                <?php echo $selected_article[0]->keywords; ?>
+                                <?php echo $selected_webinar[0]->keywords; ?>
                             </textarea>
                           </div>
                           <div class="form-group">
                             <label>Kategori</label>
                             <select class="form-control w-25" name="category" required>
+                            <option value="" selected>Pilih Kategori</option>
                         <?php 
-                        if($article_category != null)
+                        if($webinarkategori != null)
                         {
 
-                            foreach($article_category as $ac){
+                            foreach($webinarkategori as $ac){
                         ?>
-                                <option value="<?php echo $ac->id; ?>" <?php if($selected_article[0]->category == $ac->category_name){ echo "selected"; } ?>><?php echo $ac->category_name; ?>
+                                <option value="<?php echo $ac->id; ?>" <?php if($selected_webinar[0]->category == $ac->id){ echo "selected"; } ?>><?php echo $ac->category_name; ?>
                                     
                                 </option>
                         <?php 
@@ -97,12 +98,12 @@
                           </div>
                           <div class="form-group">
                             <label>Gambar webinar</label>
-                            <img src="<?php echo base_url('upload/img_article/'.$selected_article[0]->img); ?>" style="width: 110px;">
+                            <img src="<?php echo base_url('upload/img_webinar/'.$selected_webinar[0]->img); ?>" style="width: 110px;">
                             <a class="btn btn-warning" href="#" data-toggle="modal" data-target="#popUpChangeImage"><i class="fa fa-edit"></i> Ganti foto</a>
                           </div>
                           <div class="form-group">
                             <?php 
-                            if($selected_article[0]->is_published == '1'){
+                            if($selected_webinar[0]->is_published == '1'){
                             ?>
                             <label>Status Webinar (Published)</label>
                             <?php 
@@ -113,9 +114,9 @@
                             <?php 
                             }
                             ?>
-                            <select class="form-control w-25" name="status_article"required>
-                                <option value="0" <?php if($selected_article[0]->is_published == '0') { echo "selected"; }?>>Draft</option>
-                                <option value="1" <?php if($selected_article[0]->is_published == '1') { echo "selected"; }?>>Publish</option>
+                            <select class="form-control w-25" name="status_webinar"required>
+                                <option value="0" <?php if($selected_webinar[0]->is_published == '0') { echo "selected"; }?>>Draft</option>
+                                <option value="1" <?php if($selected_webinar[0]->is_published == '1') { echo "selected"; }?>>Publish</option>
                             </select>
                           </div>
                           <div class="form-group">
@@ -139,7 +140,7 @@
                     </div>
                     <div class="modal-body text-center">
                         <p class="text-center">Pilih gambar untuk menggantikan foto webinar</p>
-                        <?php echo form_open_multipart('ctrladmin_article/update_image_article/'.$selected_article[0]->id, ['class' => 'form-horizontal', 'method' => 'post']);?>
+                        <?php echo form_open_multipart('webinar/update_image_webinar/'.$selected_webinar[0]->id, ['class' => 'form-horizontal', 'method' => 'post']);?>
                             <input type="file" name="userfile" accept="image/*" required>
                             <div class="row mt-5">
                                 <div class="col-md-6 col-xs-12">
@@ -158,7 +159,7 @@
             <script type="text/javascript" src="<?php echo base_url(); ?>/res/admin/js/tinymce/tinymce.min.js"></script>            
             <script>
                 tinymce.init({
-                    selector: "#article",
+                    selector: "#webinar-area",
                     height:650,                
                     plugins: [
                         'wordcount'

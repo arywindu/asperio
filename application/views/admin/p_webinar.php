@@ -15,7 +15,7 @@
                         </ol>
                     </div>                    
                     <div class="col-md-6 col-sm-4 mt-3">
-                        <a href="<?php echo site_url('ctrladmin/add_webinar'); ?>" class="btn btn-info float-right"><i class="fa fa-plus-circle"></i> Tambah webinar</a>
+                        <a href="<?php echo site_url('webinar/add'); ?>" class="btn btn-info float-right"><i class="fa fa-plus-circle"></i> Tambah webinar</a>
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -111,7 +111,7 @@
                         ?>
                           <tr>
                             <td><?php echo $i; ?></td>
-                            <td><a href="<?php echo site_url('ctrladmin/edit_webinar/'.$ar->id); ?>"><?php echo $ar->title; ?></a></td>
+                            <td><a href="<?php echo site_url('webinar/edit/'.$ar->id); ?>"><?php echo $ar->title; ?></a></td>
                             <td><?php echo $ar->category; ?></td>
                             <td><?php echo $ar->author; ?></td>
                             <?php 
@@ -130,7 +130,14 @@
                             }
                             ?>
                             <td><?php echo $status; ?></td>
-                            <td><a href="#" data-toggle="modal" data-target="#popUpDelete<?php echo $ar->id; ?>"><i class="fa fa-trash-o text-danger"></i>  </a><a href="<?php echo site_url('ctrladmin/edit_webinar/'.$ar->id); ?>" class=""><i class="fa fa-pencil-square-o"></i></a></td>
+                            <td>
+                              <a href="#" data-toggle="modal" data-target="#popUpDelete<?php echo $ar->id; ?>">
+                                <i class="fa fa-trash-o text-danger"></i>  
+                              </a>
+                              <a href="<?php echo site_url('webinar/edit/'.$ar->id); ?>" class="">
+                                <i class="fa fa-pencil-square-o"></i>
+                              </a>
+                            </td>
                           </tr>
                         <?php 
                         $i++;
@@ -169,7 +176,7 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
-                                    <a href="<?php echo site_url('ctrladmin_webinar/delete_webinar/'.$ar->id); ?>" class="btn btn-danger">Hapus</a>
+                                    <a href="<?php echo site_url('webinar/delete/'.$ar->id); ?>" class="btn btn-danger">Hapus</a>
                                 </div>
                                 <div class="col-md-6 col-xs-12">
                                     <a href="#" class="btn btn-info" data-dismiss="modal">Batal</a>
