@@ -3,14 +3,14 @@
    <!-- Display Artikel -->
    <div style="padding-top: 50px; background-color: white;" class="jumbotron jumbotron-fluid">
 	 <div class="container">
-		 <h4 class="display-4 text-center font-weight-bold">Artikel</h4>
-		 
+		 <h4 class="display-4 text-center font-weight-bold">Artikel</h4>		 
 	 </div>
-	 <div class="pagination pagination-top">
-		<?php 
-			echo $this->pagination->create_links();
-		?>
-	 </div>
+
+	 <div class="mt-5 text-center">					
+		<span style="text-decoration : none;" class="pagination justify-content-center">
+			<?php echo $this->pagination->create_links(); ?>
+		</span>
+	</div>
 
 	 
 	<?php
@@ -29,10 +29,11 @@
 	 </div>
 	 <?php } ?>
 
-	 <div class="pagination pagination-bottom">
-		<?php 
-			echo $this->pagination->create_links();
-		?>
-	 </div>
+	 <div class="mt-5 text-center">					
+		<span style="text-decoration : none;" class="pagination justify-content-center">
+			<?php echo $this->pagination->create_links(); ?>
+		</span>
+	</div>
+	 
    </div>  
    <!-- END Artikel -->

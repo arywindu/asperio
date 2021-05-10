@@ -124,46 +124,7 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/p_detail_kontra');
 		$this->load->view('default/footer');
 	}
-	public function kontrasepsi_suntikankb()
-	{
-		$data = array
-		(
-			'title_web' => 'Berani Berencana - suntikan kb'
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/p_detail_suntikan');
-		$this->load->view('default/footer');
-	}
-	public function kontrasepsi_implan()
-	{
-		$data = array
-		(
-			'title_web' => 'Berani Berencana - implan'
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/p_detail_implan');
-		$this->load->view('default/footer');
-	}
-	public function kontrasepsi_iud()
-	{
-		$data = array
-		(
-			'title_web' => 'Berani Berencana - iud'
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/p_detail_iud');
-		$this->load->view('default/footer');
-	}
-	public function update()
-	{
-		$data = array
-		(
-			'title_web' => 'Berani Berencana - Update'
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/page_update');
-		$this->load->view('default/footer');
-	}
+	
 
 	public function list_article()
 	{
@@ -178,44 +139,4 @@ class Ctrl extends CI_Controller {
 		
 	}
  
-	public function search()
-	{
-		$keyword = $this->input->post('keyword');
-
-		$data = array(
-			'title_web' => 'Hasil : '.$keyword,
-			'bb_articles' => $this->Asperio_Model->get_keyword($keyword)
-		);
-				
-		$this->load->view('default/header', $data);			
-		$this->load->view('default/search');
-		$this->load->view('default/footer');
-		
-	}
-	public function create_comment($slug_article)
-	{
-		$id_user = $this->session->userdata('id_user');
-		$id_article = $this->input->post('article_id');
-		$comment = $this->input->post('comment');
-
-		$data = array(
-			'id_article' => $id_article,
-			'id_user' => $id_user,
-			'comment' => $comment,
-		);
-		$insertToDb = $this->Asperio_Model->add_article_comment($data);
-		if($insertToDb)
-		{
-			//echo "komentar berhasil disimpan";
-			$this->session->set_flashdata('success_msg', 'Komentar anda berhasil disimpan.');
-			redirect('ctrl/artikel/'.$slug_article.'#comment_section');
-		}
-		else
-		{
-			//echo "gagal menyimpan komentar";
-			$this->session->set_flashdata('error_msg', 'Komentar anda gagal disimpan.');			
-			redirect('ctrl/artikel'.$slug_article.'#comment_section');
-		}
-	}
-
 }
