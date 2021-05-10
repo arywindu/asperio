@@ -107,7 +107,7 @@ class Ctrl extends CI_Controller {
 	{
 		$this->load->library('pagination');
 		$config['base_url'] = base_url().'ctrl/webinar';
-		$config['total_rows'] = $this->WebinarModel->getAll();
+		$config['total_rows'] = count($this->model->getAll());
 		$config['per_page'] = 3;
 		
 		// Bootstrap 4 Pagination fix

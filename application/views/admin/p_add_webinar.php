@@ -77,7 +77,7 @@
                           </div>
                           <div class="form-group">
                             <center>
-                                <input type="submit" class="btn btn-lg btn-info w-100" value="Tambah artikel">
+                                <input type="submit" class="btn btn-lg btn-info w-100" value="Tambah Webinar">
                             </center>
                           </div>
                         <?php echo form_close(); ?>
