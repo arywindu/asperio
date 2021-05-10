@@ -5,7 +5,7 @@ class ctrladmin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();		
-		$this->load->model('BeraniBerencana_Model');
+		$this->load->model('Asperio_Model');
 	}	
 	public function index()
 	{
@@ -63,8 +63,8 @@ class ctrladmin extends CI_Controller {
 		}
 		$data = array(
 			'title_web'  => 'Dashboard admin - Beraniberencana.com',
-			'article'	 => $this->BeraniBerencana_Model->get_article(),
-			'visitor' => $this->BeraniBerencana_Model->get_visitor()
+			'article'	 => $this->Asperio_Model->get_article(),
+			'visitor' => $this->Asperio_Model->get_visitor()
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_dashboard');
@@ -78,7 +78,7 @@ class ctrladmin extends CI_Controller {
 		}
 		$data = array(
 			'title_web' => 'Daftar artikel - Beraniberencana.com',
-			'article'	=> $this->BeraniBerencana_Model->get_article(),
+			'article'	=> $this->Asperio_Model->get_article(),
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_article');
@@ -152,7 +152,7 @@ class ctrladmin extends CI_Controller {
 		}
 		$data = array(
 			'title_web' 		=> 'Tambah artikel - Beraniberencana.com',
-			'article_category'	=> $this->BeraniBerencana_Model->get_article_category()
+			'article_category'	=> $this->Asperio_Model->get_article_category()
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_add_article');
@@ -166,8 +166,8 @@ class ctrladmin extends CI_Controller {
 		}
 		$data = array(
 			'title_web' 		=> 'Edit artikel - Beraniberencana.com',
-			'article_category'	=> $this->BeraniBerencana_Model->get_article_category(),
-			'selected_article'	=> $this->BeraniBerencana_Model->get_article_from_id($id),
+			'article_category'	=> $this->Asperio_Model->get_article_category(),
+			'selected_article'	=> $this->Asperio_Model->get_article_from_id($id),
 		);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/p_edit_article');
@@ -184,8 +184,8 @@ class ctrladmin extends CI_Controller {
 		}
 		$data = array(
 			'title_web' => 'Daftar Komentar - Beraniberencana.com',
-			'comment'   => $this->BeraniBerencana_Model->get_comment(),
-			'list_comment' => $this->BeraniBerencana_Model->get_comment(),	
+			'comment'   => $this->Asperio_Model->get_comment(),
+			'list_comment' => $this->Asperio_Model->get_comment(),	
 		);
 
 		$this->load->view('admin/header', $data);
