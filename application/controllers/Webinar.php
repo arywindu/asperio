@@ -111,7 +111,7 @@ class Webinar extends CI_Controller {
 			redirect('ctrladmin');
 		}
 		$data = array(
-			'title_web' 		=> 'Edit artikel - Asperio.com',
+			'title_web' 		=> 'Edit Webinar - Asperio.com',
 			'webinarkategori'	=> $this->model->getWebinarCategory(),
 			'selected_webinar'	=> $this->model->getwebinarbyid($id),
 		);

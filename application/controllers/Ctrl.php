@@ -23,27 +23,6 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/page_home');
 		$this->load->view('default/footer');
 	}
-	
-	public function webinar() //asperio
-	{
-		// Get total data data;	
-		$jumlah_data = $this->Asperio_Model->get_article_row('lifestyle');
-
-		// Set uri segment
-		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		
-		// Config for pagination
-		$url = 'ctrl/webinar/';
-		
-		$data = array
-		(
-			'title_web' => 'Asperio - Webinar',
-	
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/page_webinar');
-		$this->load->view('default/footer');
-	}	
 
 	public function katalog() //asperio
 	{
@@ -124,4 +103,42 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/page_artikel', $data);
 		$this->load->view('default/footer');
 	}
+	public function webinar()
+	{
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'ctrl/webinar';
+		$config['total_rows'] = $this->WebinarModel->getAll();
+		$config['per_page'] = 3;
+		
+		// Bootstrap 4 Pagination fix
+		$config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination">';
+		$config['full_tag_close']   = '</ul></nav></div>';
+		$config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+		$config['num_tag_close']    = '</span></li>';
+		$config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+		$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+		$config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['next_tag_close']  	= '<span aria-hidden="true"></span></span></li>';
+		$config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['prev_tag_close']  	= '</span></li>';
+		$config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+		$config['first_tag_close'] 	= '</span></li>';
+		$config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['last_tag_close']  	= '</span></li>';
+
+		$this->pagination->initialize($config);
+
+		$from = $this->uri->segment(3);
+		$data = array
+
+		(
+			'title_web' => 'Asperio - Webinar',
+			'datawebinar' => $this->WebinarModel->getLimit($config['per_page'], $from)
+		);
+		
+		$this->load->view('default/header', $data);
+		$this->load->view('default/page_webinar', $data);
+		$this->load->view('default/footer');
+	}
 }
+
