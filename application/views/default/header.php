@@ -46,7 +46,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <a class="dropdown-item" href="<?php echo site_url('ctrl/katalog'); ?>" >Katalog</a>
-                          <a class="dropdown-item" href="<?php echo site_url('ctrl/artikel'); ?>">Artikel</a>
+                          <a class="dropdown-item" href="<?php echo site_url('ctrl/menuArtikel'); ?>">Artikel</a>
                         </div>
                       </li>
                       <a style="margin-right: 100px;" class="nav-item nav-link font-weight-bold" href="<?php echo site_url('ctrl/webinar'); ?>">Webinar</a>               
