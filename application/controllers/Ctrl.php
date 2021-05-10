@@ -89,13 +89,19 @@ class Ctrl extends CI_Controller {
 	}
 	public function menuArtikel()
 	{
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'ctrl/menuArtikel';
+		$config['total_rows'] = $this->ArtikelModel->getArtikelAll();
+		$config['per_page'] = 3;
+		$from = $this->uri->segment(3);
 		$data = array
 		(
 			'title_web' => 'Asperio - Artikel',
-			'dataartikel' => $this->ArtikelModel->getArtikel()
+			'dataartikel' => $this->ArtikelModel->getArtikel($config['per_page'], $from)
 		);
+		$this->pagination->initialize($config);
 		$this->load->view('default/header', $data);
-		$this->load->view('default/page_artikel');
+		$this->load->view('default/page_artikel', $data);
 		$this->load->view('default/footer');
 	}
 	public function kontrasepsi_pilkb()

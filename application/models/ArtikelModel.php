@@ -3,9 +3,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class ArtikelModel extends CI_Model
 {
-     function getArtikel(){
-          $this->db->from('bb_article');
-          //$this->db->limit(3, 0);
-          return $this->db->get()->result();
+     function getArtikel($number, $offset){
+          return $this->db->get('bb_article', $number, $offset)->result();
+     }
+
+     function getArtikelAll(){
+          return $this->db->get('bb_article')->num_rows();
      }
 }

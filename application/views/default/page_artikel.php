@@ -4,7 +4,15 @@
    <div style="padding-top: 50px; background-color: white;" class="jumbotron jumbotron-fluid">
 	 <div class="container">
 		 <h4 class="display-4 text-center font-weight-bold">Artikel</h4>
+		 
 	 </div>
+	 <div class="pagination pagination-top">
+		<?php 
+			echo $this->pagination->create_links();
+		?>
+	 </div>
+
+	 
 	<?php
 	foreach ($dataartikel as $key) {?>
 	 <div class="container-fluid row p-5">
@@ -20,5 +28,11 @@
 		 </div>
 	 </div>
 	 <?php } ?>
+
+	 <div class="pagination pagination-bottom">
+		<?php 
+			echo $this->pagination->create_links();
+		?>
+	 </div>
    </div>  
    <!-- END Artikel -->
