@@ -22,57 +22,6 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/footer');
 	}
 	
-	public function kesehatan()
-	{		
-		// Get total data data;	
-		$jumlah_data = $this->Asperio_Model->get_article_row('kesehatan');
-
-		// Set uri segment
-		$from = $this->uri->segment(3);
-
-	
-		// Config for pagination
-		$url = 'ctrl/kesehatan/';
-		$per_page = '6';
-		$config = config_pagination($url, $jumlah_data, $per_page);
-
-		$this->pagination->initialize($config);
-		$this->db->order_by('created_date', 'DESC');			
-
-		$data = array(
-			'title_web' => 'Berani Berencana - Kesehatan',
-			'article' => $this->Asperio_Model->get_article_from_category('kesehatan', $per_page, $from),
-		);
-		$this->load->view('default/header', $data);
-		$this->load->view('default/page_kesehatan_seksual');
-		$this->load->view('default/footer');
-	}
-	public function kontrasepsi()
-	{
-		// Get total data data;	
-		$jumlah_data = $this->Asperio_Model->get_article_row('kontrasepsi');
-
-		// Set uri segment
-		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-	
-		// Config for pagination
-		$url = 'ctrl/kontrasepsi/';
-		$per_page = '6';
-		
-		$config = config_pagination($url, $jumlah_data, $per_page);
-
-		$this->pagination->initialize($config);	
-		$this->db->order_by('created_date', 'DESC');
-		
-		$data = array(
-			'title_web' => 'Berani Berencana - Kontrasepsi',
-			'article' => $this->Asperio_Model->get_article_from_category('kontrasepsi', $per_page, $start_index),
-		);
-
-		$this->load->view('default/header', $data);
-		$this->load->view('default/page_kontrasepsi');
-		$this->load->view('default/footer');
-	}
 	public function webinar() //asperio
 	{
 		// Get total data data;	
@@ -137,14 +86,14 @@ class Ctrl extends CI_Controller {
 		$this->load->view('default/p_detail_article');
 		$this->load->view('default/footer');
 	}
-	public function kontrasepsi_kondom()
+	public function menuArtikel()
 	{
 		$data = array
 		(
-			'title_web' => 'Berani Berencana - kondom'
+			'title_web' => 'Asperio - Artikel'
 		);
 		$this->load->view('default/header', $data);
-		$this->load->view('default/p_detail_kondom');
+		$this->load->view('default/page_artikel');
 		$this->load->view('default/footer');
 	}
 	public function kontrasepsi_pilkb()
