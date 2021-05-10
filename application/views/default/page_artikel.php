@@ -6,11 +6,11 @@
 		 <h4 class="display-4 text-center font-weight-bold">Artikel</h4>		 
 	 </div>
 
-	 <div class="mt-5 text-center">					
-		<span style="text-decoration : none;" class="pagination justify-content-center">
-			<?php echo $this->pagination->create_links(); ?>
-		</span>
-	</div>
+	 	<div class="mt-5 text-center">					
+			<span class="pagination justify-content-center">
+			<?php $linkpage = $this->pagination->create_links(); echo $linkpage;?>
+			</span>
+		</div>
 
 	 
 	<?php
@@ -29,11 +29,11 @@
 	 </div>
 	 <?php } ?>
 
-	 <div class="mt-5 text-center">					
-		<span style="text-decoration : none;" class="pagination justify-content-center">
-			<?php echo $this->pagination->create_links(); ?>
-		</span>
-	</div>
+		<div class="mt-5 text-center">					
+				<span class="pagination justify-content-center">
+				<?php echo $linkpage ?>
+				</span>
+		</div>
 	 
    </div>  
    <!-- END Artikel -->

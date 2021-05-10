@@ -93,13 +93,33 @@ class Ctrl extends CI_Controller {
 		$config['base_url'] = base_url().'ctrl/menuArtikel';
 		$config['total_rows'] = $this->ArtikelModel->getArtikelAll();
 		$config['per_page'] = 3;
+		
+		// Bootstrap 4 Pagination fix
+		$config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination">';
+		$config['full_tag_close']   = '</ul></nav></div>';
+		$config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+		$config['num_tag_close']    = '</span></li>';
+		$config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+		$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+		$config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['next_tag_close']  	= '<span aria-hidden="true"></span></span></li>';
+		$config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['prev_tag_close']  	= '</span></li>';
+		$config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+		$config['first_tag_close'] 	= '</span></li>';
+		$config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['last_tag_close']  	= '</span></li>';
+
+		$this->pagination->initialize($config);
+
 		$from = $this->uri->segment(3);
 		$data = array
+
 		(
 			'title_web' => 'Asperio - Artikel',
 			'dataartikel' => $this->ArtikelModel->getArtikel($config['per_page'], $from)
 		);
-		$this->pagination->initialize($config);
+		
 		$this->load->view('default/header', $data);
 		$this->load->view('default/page_artikel', $data);
 		$this->load->view('default/footer');
